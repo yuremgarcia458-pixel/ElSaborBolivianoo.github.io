@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabores de Bolivia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+<div class="bandera">
+<div class="verde"></div>
+<div class="amarillo"></div>
+<div class="rojo"></div>
+</div>
+
+<header>
+<header id="inicio"></header>
+<img src="png/logo.png" alt="Logo" class="logo">
+
+<h1>🍽 EL SABOR BOLIVIANO </h1>
+
+<p>
+Descubre los platos tipicos de los nueve departamentos del Bolivia
+Cada plato refleja la historia, cultura y tradición de su región.
+</p>
+
+<button class="btn" onclick="document.querySelector('header').style.display='none'; document.getElementById('platos').style.display='block'; window.scrollTo(0,0);">
+    Explorar
+</button>
+</header>
+
+<section id="platos" style="display:none;">
+    
+<h2 class="titulo">Los 9 Departamentos y sus Platos Típicos</h2>
+
+<div class="buscador-departamentos">
+    <span class="icono-busqueda">🔎</span>
+    <input
+        type="text"
+        id="buscarDepartamento"
+        placeholder="Busca un departamento o plato típico..."
+        autocomplete="off"
+    >
+    <div id="resultadosBusqueda" class="resultados-busqueda"></div>
+</div>
+
+<div class="grid">
+
+
+<div class="card" onclick="mostrarPlato('lapaz')">
+<img src="png/la paz.jpg" alt="">
+<div class="card-content">
+<h2>🏔 La Paz</h2>
+<h3>Plato:</h3>
+<p><b>Plato Paceño</b></p>
+<p>Delicioso plato que contiene, avas, papa, carne, queso, choclo y su rica llajwua.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('oruro')">
+<img src="png/oruro.png" alt="">
+<div class="card-content">
+<h2>⚒ Oruro</h2>
+<h3>Plato:</h3>
+<p><b>Charquekan</b></p>
+<p>Carne de llama deshidratada acompañada con mote, papa, huevo y queso.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('potosi')">
+<img src="png/potosi.png" alt="">
+<div class="card-content">
+<h2>⛰ Potosí</h2>
+<h3>Plato:</h3>
+<p><b>Kalapurka</b></p>
+<p>Sopa espesa y caliente preparada con maíz, carne y ají. Tradicionalmente se sirve muy caliente y se caracteriza por su sabor intenso./p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('cochabamba')">
+<img src="png/cochabamca.png" alt="">
+<div class="card-content">
+<h2>🌿 Cochabamba</h2>
+<h3>Plato:</h3>
+<p><b>Pique Macho</b></p>
+<p>Carne, salchicha, papas fritas, huevo y locoto. Uno de los platos más famosos de Bolivia.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('santacruz')">
+<img src="png/santa cruz.png" alt="">
+<div class="card-content">
+<h2>🌴 Santa Cruz</h2>
+<h3>Plato:</h3>
+<p><b>Masaco de platano</b></p>
+<p>Se prepara aplastando plátano cocido o frito. Es un alimento tradicional de la región amazónica y oriental.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('beni')">
+<img src="png/beni.png" alt="">
+<div class="card-content">
+<h2>🐊 Beni</h2>
+<h3>Plato:</h3>
+<p><b>Majadito beniano</b></p>
+<p>Arroz con charque o pato, huevo frito y plátano maduro.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('pando')">
+<img src="png/pando.jpg" alt="">
+<div class="card-content">
+<h2>🌳 Pando</h2>
+<h3>Plato:</h3>
+<p><b>Sudado de Surubí</b></p>
+<p>Plato elaborado con pescado de río, especialmente surubí, cocinado con tomate, cebolla y condimentos. Se acompaña normalmente con arroz o yuca.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('tarija')">
+<img src="png/tarija.jpg" alt="">
+<div class="card-content">
+<h2>🍇 Tarija</h2>
+<h3>Plato:</h3>
+<p><b>Saice Tarijeño</b></p>
+<p>Carne picada con ají rojo servida con arroz, papa y arvejas.</p>
+</div>
+</div>
+
+
+<div class="card" onclick="mostrarPlato('chuquisaca')">
+<img src="png/chuquisaca.jpg" alt="">
+<div class="card-content">
+<h2>🏛 Chuquisaca</h2>
+<h3>Plato:</h3>
+<p><b>Mondongo Chuquisaqueño</b></p>
+<p>Cerdo cocinado con ají rojo acompañado de maíz blanco.</p>
+</div>
+</div>
+
+</div>
+
+<section class="compartir">
+
+    <h2>📲 Comparte EL SABOR BOLIVIANO</h2>
+
+    <p>¿Te gustó nuestra página? ¡Compártela con tus amigos!</p>
+
+    <div class="botones-compartir">
+
+        <button class="whatsapp" onclick="compartirWhatsApp()">
+            🟢 WhatsApp
+        </button>
+
+        <button class="facebook" onclick="compartirFacebook()">
+            🔵 Facebook
+        </button>
+
+        <button class="copiar" onclick="copiarEnlace()">
+            📋 Copiar enlace
+        </button>
+
+    </div>
+
+    <p id="mensaje-copiado"></p>
+
+</section>
+<section class="redes-sociales">
+
+    <h2>📱 Síguenos en nuestras redes</h2>
+
+    <p>
+        Conoce más sobre la gastronomía boliviana y acompáñanos en nuestras redes.
+    </p>
+
+    <div class="redes">
+
+        <a href="https://www.tiktok.com/@elsaborboliviano4"target="_blank" class="red tiktok">
+            🎵 TikTok
+        </a>
+
+        <a href="https://www.youtube.com/@ElsaborBoliviano_0ficial" target="_blank" class="red youtube">
+            ▶️ YouTube
+        </a>
+
+        <a href="https://www.instagram.com/elsaborboliviano_0ficial" target="_blank" class="red instagram">
+            📸 Instagram
+        </a>
+
+    </div>
+
+</section>
+
+</section>
+
+<section>
+
+<h2 class="titulo">❤️ ¿Por qué la comida boliviana es especial?</h2>
+
+<p style="text-align:center;font-size:20px;max-width:900px;margin:auto;line-height:2;">
+La gastronomía boliviana combina ingredientes andinos, amazónicos y del valle,
+creando sabores únicos que representan la diversidad cultural del país.
+Cada departamento tiene recetas tradicionales transmitidas de generación en generación.
+</p>
+
+</section>
+
+<footer>
+
+<h2>Bolivia, un país lleno de sabor.</h2>
+<p>- EL SABOR BOLIVIANO</p>
+
+</footer>
+
+<section id="lapaz" class="detalle">
+
+<button onclick="volver()">⬅ volver</button>
+
+<h1>🏔 Plato Paceño</h1>
+
+<img src="jpg/plato paceño 4.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/TLaqo1qiF1Q"
+        title="Preparación del Plato Paceño"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🥔 Ingredientes del Plato Paceño</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/carne de res.jpeg" alt="Carne de res">
+        <div class="ingrediente-info">
+            <h3>Carne de res</h3>
+            <p>2 libras (o ½ kilo)</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/choclo.jpeg" alt="Choclo">
+        <div class="ingrediente-info">
+            <h3>Choclo</h3>
+            <p>4 choclos grandes y tiernos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papa imilla">
+        <div class="ingrediente-info">
+            <h3>Papa imilla</h3>
+            <p>4 libras</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ava.jpeg" alt="Habas verdes">
+        <div class="ingrediente-info">
+            <h3>Habas verdes</h3>
+            <p>1 libra, frescas con cáscara</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/queso.jpg" alt="Queso criollo">
+        <div class="ingrediente-info">
+            <h3>Queso criollo</h3>
+            <p>1 queso mediano</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite para freír</h3>
+            <p>½ taza</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/comino.jpeg" alt="Comino molido">
+        <div class="ingrediente-info">
+            <h3>Comino molido</h3>
+            <p>1 pizca</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta negra">
+        <div class="ingrediente-info">
+            <h3>Pimienta negra</h3>
+            <p>1 pizca</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite adicional">
+        <div class="ingrediente-info">
+            <h3>Aceite adicional</h3>
+            <p>2 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/salsa soya.jpeg" alt="Salsa de soya">
+        <div class="ingrediente-info">
+            <h3>Salsa de soya</h3>
+            <p>2 cucharadas adicionales</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomate">
+        <div class="ingrediente-info">
+            <h3>Tomate</h3>
+            <p>1 tomate mediano y maduro</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/locoto.jpeg" alt="Locotos">
+        <div class="ingrediente-info">
+            <h3>Locotos</h3>
+            <p>5 locotos verdes o rojos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/quirquiña.jpeg" alt="Quirquiña">
+        <div class="ingrediente-info">
+            <h3>Quirquiña fresca</h3>
+            <p>5 ramitas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>1 pizca</p>
+        </div>
+    </div>
+
+</div>
+
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. PREPARACION DEL CHOCLO: Quita los cabellos gruesos del choclo, Coloca los choclos en una olla profunda y cúbrelos con abundante agua fría, Pon la olla a fuego alto. Una vez que empiece a hervir, baja a fuego medio y cocina entre 25 a 35 minutos, hasta que los granos estén completamente tiernos.
+<br><br>
+
+2, PREPARACION DE LA PAPA: Lava muy bien las papas con agua corriente para eliminar toda la tierra, ya que se cocinan y sirven con su cáscara, pon las papas en una olla y cúbrelas con agua fría. Añade una cucharada de sal, cocina a fuego medio durante 20 a 30 minutos. Sabrás que están listas cuando las pinches con un cuchillo o tenedor y este entre con suavidad, o cuando la cáscara empiece a partirse ligeramente.
+
+<br><br>
+
+3. PREPARACION DE LA HABA: Lávalas bien. Se cocinan enteras, pero debes de cortar la parte superior e inferior de la haba para que lo del interior tenga una cocción perfecta y suave dentro de su vaina o cáscara verde. Colócalas en una olla con agua hirviendo y una pizca de sal. Déjalas hervir a fuego medio de 15 a 20 minutos. No te excedas de tiempo para que no se deshagan ni pierdan su color verde brillante.
+
+<br><br>
+
+4. PREPARACION DE LA CARNE: Condimenta los filetes de res con sal a gusto, una pisca depimienta, una pisca de comino, dos cucharillas de aceite, y dos cucharillas de salsa soya. Dejar reposar por 10 mn. para que agarre sabor. En una sartén con aceite bien caliente, fríe los filetes a fuego alto de 3 a 4 minutos por lado para sellar los jugos, logrando que queden dorados por fuera y blandos por dentro.
+
+<br><br>
+5. PREPARACION DEL QUESO: Corta el queso criollo en rebanadas rectangulares y gruesas (de aproximadamente 1.5 a 2 centímetros de espesor). Calienta media taza de aceite en una sartén a fuego medio-alto. Fríe las rebanadas de queso durante 1 a 2 minutos por lado, retirándolas apenas estén doradas y crujientes por fuera.
+
+<br><br>
+
+6. PREPARACION DE LA LLAJWUA: Tradicionalmente se muelen los ingredientes en un batán de piedra (o en su defecto, en una licuadora usando pulsos cortos).Proceso: Moler primero los locotos (con o sin semillas) junto con las hojas de quirquiña. Luego añade el tomate pelado y reduce todo a una salsa. Agrega sal al final.
+
+</p>
+
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El Plato Paceño nació en La Paz durante el cerco de 1781, cuando la ciudad tuvo escasez de alimentos. Se preparó con productos del altiplano como papa, habas, choclo y queso. Con el paso del tiempo se convirtió en un plato tradicional y en un símbolo de la identidad y cultura paceña, representando la historia y las costumbres de la ciudad de La Paz.
+
+</p>
+
+
+</section>
+<section id="oruro" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/charquekan.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/GXVzbwvlqmc"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+<h2>🥩 Ingredientes del Charquekan</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/charke.jpeg" alt="Charque">
+        <div class="ingrediente-info">
+            <h3>Charque</h3>
+            <p>500 gramos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/mote de maiz.jpeg" alt="Mote de maíz">
+        <div class="ingrediente-info">
+            <h3>Mote de maíz</h3>
+            <p>400 gramos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papas">
+        <div class="ingrediente-info">
+            <h3>Papas</h3>
+            <p>4 unidades (aproximadamente 400 g)</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/queso.jpg" alt="Queso criollo">
+        <div class="ingrediente-info">
+            <h3>Queso criollo</h3>
+            <p>200 gramos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomate">
+        <div class="ingrediente-info">
+            <h3>Tomate</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/locoto.jpeg" alt="Locoto">
+        <div class="ingrediente-info">
+            <h3>Locoto</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/quirquiña.jpeg" alt="Quirquiña">
+        <div class="ingrediente-info">
+            <h3>Quirquiña</h3>
+            <p>1 ramita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+LAVAR Y PREPARAR EL CHARQUE: Primero debemos lavar el charque con abundante agua para retirar el exceso de sal. Después, lo colocamos en una olla con agua limpia para comenzar su cocción.
+<br><br>
+COCINAR EL CHARQUE: Luego debemos cocinar el charque en una olla con agua hasta que esté suave. Este proceso ayuda a que la carne sea más fácil de desmenuzar.
+<br><br>
+DESMENUZAR Y FREÍR EL CHARQUE: Una vez cocido, retiramos el charque del agua, lo dejamos enfriar un poco y lo desmenuzamos en trozos pequeños. Después, lo freímos en una sartén con un poco de aceite hasta que quede dorado y crocante.
+<br><br>
+COCINAR LAS PAPAS Y EL MOTE: Mientras se prepara el charque, debemos lavar las papas y cocinarlas en agua hasta que estén blandas. De la misma manera, cocinamos el mote hasta que esté bien suave
+<br><br>
+PREPARAR LOS HUEVOS Y EL QUESO: Después debemos preparar los huevos, generalmente fritos, y cortar el queso en porciones adecuadas para acompañar el plato.
+<br><br>
+SERVIR EL PLATO: Finalmente, colocamos el charque frito junto con las papas, el mote, el huevo y el queso. De esta manera obtenemos el plato de charque listo para servir.
+<br><br>
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+Bajo el sol radiante de Oruro, una cocinera estira hilos de carne de llama deshidratada para freírlos hasta que queden perfectamente crujientes. En la gran olla de barro, los granos de mote blanco y las papas nativas se cocinan al vapor, inundando la cocina con un aroma ancestral. Al emplatar, corona la preparación con un huevo duro y una generosa rebanada de queso criollo frito que se derrite lentamente. Los comensales se reúnen alrededor de la mesa, mezclando cada bocado con una cucharada de llajua picante que despierta los sentidos. Esta herencia de los arrieros andinos transforma ingredientes simples en un festín dorado que celebra la resistencia y el sabor del altiplano boliviano.
+
+</p>
+
+</section>
+<section id="potosi" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Kalapurka</h1>
+
+<img src="jpg/kalapurka.jpg" class="foto">
+
+<<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/X_sUv9Vkbfo"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🥘 Ingredientes de la Kalapurka</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/carne de res.jpeg" alt="Carne de res">
+        <div class="ingrediente-info">
+            <h3>Carne de res</h3>
+            <p>500 gramos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/choclo.jpeg" alt="Harina de maíz">
+        <div class="ingrediente-info">
+            <h3>Harina de maíz</h3>
+            <p>1 taza</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papa">
+        <div class="ingrediente-info">
+            <h3>Papas</h3>
+            <p>4 unidades medianas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajicolorado.jpeg" alt="Ají colorado">
+        <div class="ingrediente-info">
+            <h3>Ají colorado</h3>
+            <p>3 cucharadas de ají molido</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>1 unidad grande</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajo.jpeg" alt="Ajo">
+        <div class="ingrediente-info">
+            <h3>Ajo</h3>
+            <p>2 dientes</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/comino.jpeg" alt="Comino">
+        <div class="ingrediente-info">
+            <h3>Comino</h3>
+            <p>½ cucharadita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta">
+        <div class="ingrediente-info">
+            <h3>Pimienta negra</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/oregano.jpeg" alt="Orégano">
+        <div class="ingrediente-info">
+            <h3>Orégano</h3>
+            <p>1 cucharadita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>2 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/agua.jpeg" alt="Agua">
+        <div class="ingrediente-info">
+            <h3>Agua o caldo de carne</h3>
+            <p>1½ a 2 litros aproximadamente</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Primero, lavar la carne de res y cortarla en trozos medianos. Colocarla en una olla con agua y sal, y cocinarla hasta que esté tierna. Reservar el caldo, ya que será la base de la sopa y le dará un sabor intenso.<br><br>
+
+2. Mientras se cocina la carne, lavar las papas, pelarlas y cortarlas en trozos. Cocinarlas en el caldo hasta que estén suaves, pero procurando que no se deshagan por completo.<br><br>
+
+3. Picar finamente la cebolla y el ajo. En una sartén, calentar un poco de aceite y sofreír la cebolla hasta que esté transparente. Después, agregar el ajo, el ají colorado, el comino, la pimienta y el orégano. Mezclar bien y cocinar durante unos minutos para que los condimentos desprendan su aroma.<br><br>
+
+4. Incorporar el ahogado de ají a la olla con el caldo y la carne. Remover suavemente para distribuir los sabores y dejar hervir a fuego medio durante unos minutos.<br><br>
+
+5. En un recipiente aparte, disolver la harina de maíz en agua fría, mezclando bien para evitar que se formen grumos. Añadir esta mezcla poco a poco a la olla, removiendo constantemente para que el caldo espese y adquiera una consistencia característica.<br><br>
+
+6. Dejar cocinar a fuego lento durante varios minutos, removiendo con frecuencia para evitar que la harina se pegue al fondo. Comprobar que la carne y las papas estén bien cocidas y que la sopa tenga una textura espesa y uniforme.<br><br>
+
+7. Probar la preparación y ajustar la sal y los condimentos si es necesario. La kalapurka debe quedar bien caliente, con un sabor intenso a carne y ají colorado.<br><br>
+
+8. Tradicionalmente, la kalapurka potosina se caracteriza por servirse muy caliente y, en algunas preparaciones, se introduce una piedra calentada al fuego dentro del recipiente para mantener la temperatura de la sopa. Esta técnica ancestral es una de las particularidades más representativas del plato.<br><br>
+
+9. Finalmente, servir la kalapurka en platos hondos y disfrutarla caliente. Es una comida tradicional de Potosí que destaca por su consistencia espesa, sus ingredientes andinos y su forma particular de preparación, relacionada con las costumbres culinarias de la región.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+Conversación en el Modo IA: dame una historia de 5 lineas del plato charquekanDijiste: dame una historia de 5 lineas del plato charquekandame una historia de 5 lineas del plato charquekanBajo el sol radiante de Oruro, una cocinera estira hilos de carne de llama deshidratada para freírlos hasta que queden perfectamente crujientes. En la gran olla de barro, los granos de mote blanco y las papas nativas se cocinan al vapor, inundando la cocina con un aroma ancestral. Al emplatar, corona la preparación con un huevo duro y una generosa rebanada de queso criollo frito que se derrite lentamente. Los comensales se reúnen alrededor de la mesa, mezclando cada bocado con una cucharada de llajua picante que despierta los sentidos. Esta herencia de los arrieros andinos transforma ingredientes simples en un festín dorado que celebra la resistencia y el sabor del altiplano boliviano.
+</p>
+
+</section>
+<section id="cochabamba" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/charquekan.jpeg" class="foto">
+
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/BnpyKjFjwdA"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🥩 Ingredientes del Pique Macho</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/salchicha.jpeg" alt="Salchicha o chorizo">
+        <div class="ingrediente-info">
+            <h3>Salchicha o chorizo</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papas">
+        <div class="ingrediente-info">
+            <h3>Papas</h3>
+            <p>1 arroba</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/carne de res.jpeg" alt="Carne de res">
+        <div class="ingrediente-info">
+            <h3>Carne de res</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/huevo.jpeg" alt="Huevos">
+        <div class="ingrediente-info">
+            <h3>Huevos</h3>
+            <p>2 o 3 unidades</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/queso.jpg" alt="Queso">
+        <div class="ingrediente-info">
+            <h3>Queso</h3>
+            <p>1 queso entero</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomates">
+        <div class="ingrediente-info">
+            <h3>Tomates</h3>
+            <p>3 unidades</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/locoto.jpeg" alt="Locoto">
+        <div class="ingrediente-info">
+            <h3>Locoto</h3>
+            <p>Picado en rodajas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta">
+        <div class="ingrediente-info">
+            <h3>Pimienta</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajicolorado.jpeg" alt="Ají">
+        <div class="ingrediente-info">
+            <h3>Ají</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/salsa soya.jpeg" alt="Salsa soya">
+        <div class="ingrediente-info">
+            <h3>Salsa soya</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/mostaza.jpeg" alt="Mostaza">
+        <div class="ingrediente-info">
+            <h3>Mostaza</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. PREPARACION DE DE LA CARNE : Se debe cortar la carne de res en cubos pequeños de tamaño bocado, una ves cortado se debe marinar o sasonar en un recipiente con el ajo molido, comino, la pimienta, la salsa soya y la sal al gusto 
+<br><br>
+2. PREPARACION DE LA PAPA : Como segundo paso paso lavamos la papa y procedemos a pelarla, una vez acabdo de pelar la papa se debe cortar en forma de bastones no tan gruesos ni tan delagados, una vez hecho eso una sarten honda colocaruna cantidad de aceite mediana para que las papas se dores y salgan crocantes. se recomienda ver el paso 3 primero  
+<br><br>
+3. PREPARACION DE LA SALCHICHA O CHORIZO : Se debe cortar la salchicha o chorizo en un corte diagonal no debe de ser delgado debe tener un grosor tipo bocado se debe dorar en una sarten, dejarlo a fuego medio para que se dore ligeramente, es recomendable hacer el paso 3 al mismo tiempo que el paso 2<br><br>
+
+4. COCCION DE LA CARNE DE RES : En una sarten hechar un choro de aceite y posterior a eso colocar la carne que se dejo marinando con las especias, cellas la carne para que no se escape el juego y el sabor, una vez que la carne suelte su jugo agregar la salchicha dorada y dejar cocer por 5minutos.<br><br>
+
+5. PREPARACION DE LOS HUEVOS Y EL QUESO : En una holla se debe llenar de agua hasta la mitad y se debe colocar los huevos con su cascara, se debe dejar herbir por almenos 10mn. , se debe de labar muy bien el queso y cortar en forma vertical <br><br>
+
+6. EMPLATADO : En un plato colocar primero las papas rodadas luego se debe colocar la preparacion que hizimos de la carne y lo decoramos con queso y rodasjas de tomate y tambien el huevo y como no unas rodajas de locoto y cebolla
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El pique macho nació en Cochabamba, Bolivia, en la década de 1970 en el restaurante de Honorato Quiñones y Evangelina Rojas.Una noche, un grupo de pilotos llegó al local de madrugada buscando algo de comer cuando la cocina ya estaba cerrada. Doña Evangelina, usando lo último que le quedaba en la despensa, picó y mezcló carne, salchichas, papas fritas y abundante locoto picante.Al verlos sudar por el picor, los dueños los desafiaron diciendo: "Piquen si son machos". El plato fue un éxito rotundo y el nombre se quedó para siempre, convirtiéndose en un ícono de la comida boliviana.
+
+</p>
+
+</section>
+<section id="santacruz" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Charquekan</h1>
+
+<img src="jpg/masaco3.jpg" class="foto">
+
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/ahmDb-rkaXQ"
+        title="Preparación del Plato Paceño"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🍌 Ingredientes del Masaco de Plátano</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/postre.jpeg" alt="Plátanos verdes">
+        <div class="ingrediente-info">
+            <h3>Plátanos verdes</h3>
+            <p>4 unidades</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>2 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/agua.jpeg" alt="Agua">
+        <div class="ingrediente-info">
+            <h3>Agua</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/queso.jpg" alt="Queso">
+        <div class="ingrediente-info">
+            <h3>Queso</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+</div>
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+LAVAR Y PREPARAR LOS INGREDIENTES: Primero debemos lavar los plátanos y la carne. Luego pelamos los plátanos y cortamos la carne en trozos pequeños para facilitar su preparación.<br><br>
+PREPARAR LOS PLÁTANOS: Pelamos los plátanos verdes y los cortamos en trozos medianos. Luego los cocinamos o freímos hasta que estén blandos y puedan ser machacados fácilmente.<br><br>
+MACHACAR LOS PLÁTANOS: Colocamos los plátanos cocidos o fritos en un recipiente y los machacamos con un utensilio hasta obtener una mezcla uniforme. Agregamos un poco de sal al gusto.<br><br>
+MEZCLAR LOS INGREDIENTES: fritamos los plátanos machacados. <br><br>
+DAR FORMA Y SERVIR: Finalmente, formamos el masaco en porciones y lo servimos caliente. Podemos acompañarlo con otros alimentos según la preparación tradicional de la región. <br><br>
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+En las cálidas tierras de Santa Cruz, el aroma del charque tostado anuncia que el majadito cruceño está listo para cobrar vida en el perol. El arroz se tiñe de un dorado brillante gracias al urucú, mezclándose con el plátano de freír maduro que aporta su dulzura tropical. Sobre esta base perfecta, se acomoda un huevo frito de yema blanda y una porción de carne perfectamente machacada y crujiente. Cada cucharada combina la textura suave del grano con el toque crujiente y saladito de la res, creando una fiesta de sabores orientales. Es el alma de la gastronomía del oriente boliviano, un plato generoso que une a las familias en cada rincón del camba.
+</p>
+
+</section>
+<section id="beni" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Majadito beniano</h1>
+
+<img src="jpg/majadito beniano.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/kFQgKqh3wmY"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🥘 Ingredientes del Majadito Beniano</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/arroz.jpeg" alt="Arroz">
+        <div class="ingrediente-info">
+            <h3>Arroz</h3>
+            <p>2 tazas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/charke.jpeg" alt="Charque">
+        <div class="ingrediente-info">
+            <h3>Charque de res</h3>
+            <p>500 gramos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>1 unidad grande</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomate">
+        <div class="ingrediente-info">
+            <h3>Tomate</h3>
+            <p>2 unidades medianas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienton.jpeg" alt="Pimentón">
+        <div class="ingrediente-info">
+            <h3>Pimentón</h3>
+            <p>1 unidad</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajo.jpeg" alt="Ajo">
+        <div class="ingrediente-info">
+            <h3>Ajo</h3>
+            <p>2 dientes</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>3 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta negra">
+        <div class="ingrediente-info">
+            <h3>Pimienta negra</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/huevo.jpeg" alt="Huevo">
+        <div class="ingrediente-info">
+            <h3>Huevos</h3>
+            <p>4 unidades</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/postre.jpeg" alt="Plátano">
+        <div class="ingrediente-info">
+            <h3>Plátanos maduros</h3>
+            <p>2 unidades, para acompañar</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Primero, lavar el charque para retirar el exceso de sal. Colocarlo en una olla con agua y cocinarlo hasta que esté suave. Una vez listo, retirarlo, dejarlo enfriar un poco y desmenuzarlo en trozos pequeños. Reservar el caldo de cocción para utilizarlo más adelante.<br><br>
+
+2. Lavar y picar finamente la cebolla, los tomates, el pimentón y los dientes de ajo. Estos ingredientes servirán para preparar el ahogado, que aportará sabor y color al arroz.<br><br>
+
+3. En una olla grande, calentar el aceite y sofreír la cebolla hasta que esté transparente. Agregar el ajo, el tomate y el pimentón. Cocinar durante unos minutos, removiendo para que las verduras se mezclen y formen una salsa.<br><br>
+
+4. Incorporar el charque desmenuzado y mezclarlo con el ahogado. Añadir el urucú o colorante natural, la pimienta y una pequeña cantidad de sal si es necesario, teniendo en cuenta que el charque puede ser salado.<br><br>
+
+5. Agregar el arroz previamente lavado y mezclarlo con la carne y los condimentos. Después, incorporar aproximadamente cuatro tazas de caldo reservado o agua caliente, ajustando la cantidad según el tipo de arroz y la consistencia deseada.<br><br>
+
+6. Cocinar a fuego medio hasta que el líquido comience a reducirse. Luego, bajar el fuego, tapar la olla y dejar que el arroz se cocine lentamente hasta que esté suave y haya absorbido el líquido. Remover ocasionalmente con cuidado para evitar que se pegue al fondo.<br><br>
+
+7. Mientras se termina de cocinar el arroz, freír los huevos en una sartén. También pelar los plátanos maduros, cortarlos en rodajas y freírlos hasta que estén dorados por ambos lados.<br><br>
+
+8. Cuando el arroz esté cocido, probar y corregir la sazón si hace falta. El majadito debe quedar jugoso y bien mezclado con el charque, con un color característico y un aroma agradable.<br><br>
+
+9. Finalmente, servir el majadito caliente y acompañarlo con un huevo frito y rodajas de plátano maduro. Estos acompañamientos complementan el sabor del arroz y la carne, haciendo que el plato sea más completo.<br><br>
+
+10. El majadito es una preparación tradicional de los llanos orientales de Bolivia, especialmente conocida en el Beni y Santa Cruz. Se caracteriza por combinar arroz con charque o carne, condimentos y acompañamientos como huevo y plátano frito. Su sabor representa parte de la riqueza gastronómica y cultural de la región.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="pando" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Sudado de surubi</h1>
+
+<img src="jpg/sudado de surubi.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/MOJjo5FBOm8"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🥘 Ingredientes del Sudado de Surubí</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/surubi.jpeg" alt="Surubí">
+        <div class="ingrediente-info">
+            <h3>Surubí</h3>
+            <p>1 kilogramo de pescado en presas o filetes</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>2 unidades medianas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomate">
+        <div class="ingrediente-info">
+            <h3>Tomate</h3>
+            <p>3 unidades maduras</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienton.jpeg" alt="Pimentón">
+        <div class="ingrediente-info">
+            <h3>Pimentón</h3>
+            <p>1 unidad mediana</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajo.jpeg" alt="Ajo">
+        <div class="ingrediente-info">
+            <h3>Ajo</h3>
+            <p>2 o 3 dientes</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/limon.jpeg" alt="Limón">
+        <div class="ingrediente-info">
+            <h3>Limón</h3>
+            <p>1 unidad para sazonar el pescado</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>2 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/comino.jpeg" alt="Comino">
+        <div class="ingrediente-info">
+            <h3>Comino</h3>
+            <p>½ cucharadita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta negra">
+        <div class="ingrediente-info">
+            <h3>Pimienta negra</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ceilantro.jpeg" alt="Cilantro">
+        <div class="ingrediente-info">
+            <h3>Cilantro o perejil</h3>
+            <p>Un pequeño manojo picado</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/agua.jpeg" alt="Agua">
+        <div class="ingrediente-info">
+            <h3>Agua o caldo de pescado</h3>
+            <p>2 tazas aproximadamente</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Primero, lavar cuidadosamente las presas o filetes de surubí. Sazonarlos con sal, pimienta y un poco de jugo de limón. Dejarlos reposar durante unos minutos para que absorban el sabor de los condimentos.<br><br>
+
+2. Lavar y picar finamente la cebolla, el tomate, el pimentón y los dientes de ajo. Estos ingredientes serán la base de la salsa que dará sabor al pescado.<br><br>
+
+3. En una olla amplia, calentar el aceite y sofreír la cebolla hasta que esté transparente. Después, agregar el ajo picado y el pimentón, mezclando bien para que desprendan su aroma.<br><br>
+
+4. Incorporar los tomates picados y cocinar durante varios minutos, removiendo ocasionalmente hasta que se ablanden y formen una salsa jugosa. Añadir el comino, la pimienta y la sal al gusto.<br><br>
+
+5. Agregar aproximadamente dos tazas de agua o caldo de pescado a la preparación. Mezclar suavemente y dejar hervir unos minutos para que los sabores de las verduras y los condimentos se integren.<br><br>
+
+6. Colocar las presas de surubí dentro de la salsa, procurando que queden parcialmente cubiertas por el líquido. Tapar la olla y cocinar a fuego medio-bajo durante unos 15 a 20 minutos, dependiendo del grosor de las presas, hasta que el pescado esté completamente cocido. Evitar remover demasiado para que no se deshaga.<br><br>
+
+7. Cuando el pescado esté listo, probar la salsa y corregir la sal si es necesario. Agregar cilantro o perejil picado para aportar frescura y aroma al plato.<br><br>
+
+8. Finalmente, servir el sudado de surubí bien caliente, acompañado de arroz blanco, yuca cocida o plátano, según la costumbre familiar. Se puede añadir un poco de la salsa sobre el pescado para conservar su jugosidad y resaltar su sabor.<br><br>
+
+9. El sudado de surubí es una preparación de pescado de agua dulce que destaca por su sabor suave y su salsa elaborada con verduras y condimentos. Este plato refleja la riqueza de los ríos y la tradición gastronómica de la región amazónica boliviana, especialmente de Pando, donde el pescado forma parte de la alimentación de muchas familias.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="tarija" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Saice Tarijeño</h1>
+
+<img src="jpg/saice 1.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/Jlti6G4X040"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🍲 Ingredientes del Saice Tarijeño</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/carne molida.jpeg" alt="Carne de res">
+        <div class="ingrediente-info">
+            <h3>Carne de res</h3>
+            <p>Blanda, picada o molida</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papas">
+        <div class="ingrediente-info">
+            <h3>Papas</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/arveja.jpeg" alt="Arvejas">
+        <div class="ingrediente-info">
+            <h3>Arvejas</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebollas">
+        <div class="ingrediente-info">
+            <h3>Cebollas</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomates">
+        <div class="ingrediente-info">
+            <h3>Tomates</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajicolorado.jpeg" alt="Ají colorado">
+        <div class="ingrediente-info">
+            <h3>Ají colorado en vaina</h3>
+            <p>Seco</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajo.jpeg" alt="Ajo">
+        <div class="ingrediente-info">
+            <h3>Dientes de ajo</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/arroz.jpeg" alt="Arroz">
+        <div class="ingrediente-info">
+            <h3>Arroz</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/huevo.jpeg" alt="Huevo">
+        <div class="ingrediente-info">
+            <h3>Huevo</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite vegetal">
+        <div class="ingrediente-info">
+            <h3>Aceite vegetal</h3>
+            <p>Cantidad necesaria</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/comino.jpeg" alt="Comino">
+        <div class="ingrediente-info">
+            <h3>Comino</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta">
+        <div class="ingrediente-info">
+            <h3>Pimienta entera o molida</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Primero, lavar y preparar la carne de res. Cortarla en trozos pequeños o molerla, según la forma tradicional de preparación. Picar finamente la cebolla, el ajo, el tomate y el locoto para utilizarlos en el ahogado.<br><br>
+
+2. En una olla, calentar un poco de aceite y sofreír la cebolla hasta que esté transparente. Después, agregar el ajo picado y cocinar durante unos minutos para que suelten su aroma y sabor.<br><br>
+
+3. Incorporar el tomate picado y el locoto, mezclando bien todos los ingredientes. Añadir el comino, la pimienta, el ají colorado si se desea y la sal al gusto. Dejar cocinar hasta obtener una salsa espesa y sabrosa.<br><br>
+
+4. Agregar la carne de res a la preparación y mezclarla con el ahogado. Cocinar a fuego medio, removiendo de vez en cuando para que la carne se dore ligeramente y absorba el sabor de los condimentos.<br><br>
+
+5. Añadir un poco de agua o caldo si es necesario y dejar cocinar a fuego lento hasta que la carne esté bien cocida y la salsa tenga una consistencia jugosa. Probar y ajustar la sal y los condimentos según el gusto.<br><br>
+
+6. Mientras se termina de cocinar la carne, lavar y cocinar las papas en otra olla con agua hasta que estén suaves. Después, escurrirlas y reservarlas para acompañar el plato.<br><br>
+
+7. Finalmente, servir el saice tarijeño caliente, colocando una porción generosa de la preparación de carne con su salsa y acompañándola con papas cocidas. También se puede agregar arroz, ensalada y una pequeña porción de ají de acuerdo con la costumbre de cada familia.<br><br>
+
+8. El saice tarijeño es uno de los platos más representativos de Tarija, Bolivia. Se caracteriza por su carne preparada con cebolla, tomate y condimentos, que le dan un sabor intenso y casero. Su combinación de ingredientes refleja la tradición gastronómica tarijeña y lo convierte en una comida ideal para compartir en familia.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<section id="chuquisaca" class="detalle">
+
+<button onclick="volver()">⬅ Volver</button>
+
+<h1>⚒ Mondongo Chuquisaqueño</h1>
+
+<img src="jpg/mondongo.jpeg" class="foto">
+
+<h2>🎥 Video de preparación</h2>
+
+<div class="contenedor-video">
+    <iframe
+        src="https://www.youtube.com/embed/feXhHJaGsr0"
+        title="Preparación del charquekan"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<h2>🍲 Ingredientes del Mondongo Chuquisaqueño</h2>
+
+<div class="lista-ingredientes">
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/carne de cerdo.jpeg" alt="Carne de cerdo">
+        <div class="ingrediente-info">
+            <h3>Carne de cerdo</h3>
+            <p>1 kilo, preferiblemente con cuero</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajicolorado.jpeg" alt="Ají colorado">
+        <div class="ingrediente-info">
+            <h3>Ají colorado molido</h3>
+            <p>½ taza</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/papa.jpeg" alt="Papas">
+        <div class="ingrediente-info">
+            <h3>Papas</h3>
+            <p>6 papas medianas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/chuño.jpeg" alt="Chuño">
+        <div class="ingrediente-info">
+            <h3>Chuño</h3>
+            <p>½ kilo</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/cebolla.jpeg" alt="Cebolla">
+        <div class="ingrediente-info">
+            <h3>Cebolla</h3>
+            <p>2 cebollas medianas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/tomate.jpeg" alt="Tomate">
+        <div class="ingrediente-info">
+            <h3>Tomate</h3>
+            <p>2 tomates medianos</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/ajo.jpeg" alt="Ajo">
+        <div class="ingrediente-info">
+            <h3>Ajo</h3>
+            <p>2 dientes</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/comino.jpeg" alt="Comino">
+        <div class="ingrediente-info">
+            <h3>Comino</h3>
+            <p>½ cucharadita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pimienta negra.jpeg" alt="Pimienta negra">
+        <div class="ingrediente-info">
+            <h3>Pimienta negra</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/oregano.jpeg" alt="Orégano">
+        <div class="ingrediente-info">
+            <h3>Orégano</h3>
+            <p>1 cucharadita</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/aceite.jpeg" alt="Aceite">
+        <div class="ingrediente-info">
+            <h3>Aceite</h3>
+            <p>3 cucharadas</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/sal.jpg" alt="Sal">
+        <div class="ingrediente-info">
+            <h3>Sal</h3>
+            <p>Al gusto</p>
+        </div>
+    </div>
+
+    <div class="ingrediente">
+        <img src="jpg/ingredientes/pan molido.jpeg" alt="Pan molido">
+        <div class="ingrediente-info">
+            <h3>Pan molido</h3>
+            <p>Opcional, para espesar la salsa</p>
+        </div>
+    </div>
+
+</div>
+
+<h2>👨‍🍳 Preparación</h2>
+
+<p>
+
+1. Primero, lavar y limpiar bien la carne de cerdo. Cortarla en trozos medianos y cocinarla en una olla con agua y sal hasta que esté tierna. Reservar un poco del caldo para utilizarlo en la preparación de la salsa.<br><br>
+
+2. Mientras se cocina la carne, preparar el ají colorado. Retirar las semillas y las venas de los ajíes si se desea reducir el picante, hidratarlos en agua caliente y molerlos hasta obtener una pasta.<br><br>
+
+3. Picar finamente la cebolla y el ajo. Freírlos en una olla con un poco de aceite hasta que la cebolla esté transparente. Luego, agregar el ají colorado molido, el comino, la pimienta, el orégano y la sal al gusto.<br><br>
+
+4. Incorporar la carne de cerdo cocida a la preparación del ají. Añadir un poco del caldo reservado y dejar cocinar a fuego lento para que la carne absorba el sabor de los condimentos y la salsa espese.<br><br>
+
+5. En otra olla, cocinar el mote de maíz hasta que esté suave. Si se utiliza mote previamente cocido, solamente será necesario calentarlo. También lavar las papas y hervirlas en agua con sal hasta que estén blandas, pero sin que se deshagan.<br><br>
+
+6. Cuando todos los ingredientes estén listos, colocar el mote y las papas en los platos. Añadir encima la carne de cerdo con abundante salsa de ají colorado, procurando distribuir bien los ingredientes.<br><br>
+
+7. Finalmente, servir el mondongo bien caliente. Este plato tradicional de Chuquisaca se caracteriza por la combinación de la carne de cerdo, el intenso sabor del ají colorado y el acompañamiento del mote y las papas, que juntos le dan su sabor y apariencia característicos.
+
+</p>
+
+<h2>📜 Historia</h2>
+
+<p>
+
+El charquekan es un plato tradicional de Oruro preparado principalmente con charque de llama. Es parte de la gastronomía tradicional del departamento y se caracteriza por combinar carne deshidratada con papa, mote, huevo y queso.
+
+</p>
+
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>
